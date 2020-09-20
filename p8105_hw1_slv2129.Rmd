@@ -14,9 +14,17 @@ library(tidyverse)
 ```
 
 Creating a data frame consisting of the following:
+
+
 +   a random sample of size 10 from a standard Normal distribution
+
+
 +   a logical vector indicating whether elements of the sample are greater than 0
+
+
 +   a character vector of length 10
+
+
 +   a factor vector of length 10, with 3 different factor “levels”
 
 ```{r, echo = F}
@@ -69,6 +77,8 @@ fac_num = as.numeric(nd_df$fac_vec)
 Both factor and logical variables got number coded. The "good", "bad" and "average" have been replaced with 3,2 and 1 respectively for the factor variable. In the case of logical vector, "true" (condition satisfied) has been coded as 1 and "false" has been coded as 0. All the components of character variable have been replaced with "NA". This explains why the mean function can only be applied to numeric and logical variable. However, the factor variable can't perform numeric operations despite the numerical representation. 
 
 The following actions will be performed in the chuck of code below:
+
+
 +   convert the logical vector to numeric, and multiply the random sample by the result
 
 ```{r, echo = F, warning = F}

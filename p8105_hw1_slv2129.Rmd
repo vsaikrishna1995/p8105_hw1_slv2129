@@ -78,3 +78,21 @@ fac_log_num
 
 ```
 
+# Problem 2
+
+Loading the penguins dataset and ggplot2 library: 
+
+```{r, echo = false, message = false}
+data("penguins", package = "palmerpenguins")
+library(ggplot2)
+```
+
+The penguins dataset consists of the following variables: `r names(penguins)`. The penguin species associated with this respective dataset are `r levels(penguins$species)`. Among these species, the gender distribution is as follows: `r summary(penguins$sex)`. This data has been recorded on the penguin species from the `r levels(penguins$island)` islands. This dataset comprises of `r nrow(penguins)` rows and `r ncol(penguins)` columns. The mean flipper length of the penguins is observed as `r mean(penguins$flipper_length_mm). 
+
+Creating a scatterplot of flipper_length_mm (y) vs bill_length_mm (x)`
+
+```{r, echo - false}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggsave("p8105_hw1_P2plot.pdf", height = 6, width = 6)
+```
+
